@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../Post');
-const cors = require('cors');
-router.use(cors());
-
 
 let allPosts = [];
 let completedPosts = [];
 
 const deletePost = (id) => {
     allPosts = allPosts.filter((post) => post.id !== id);
+    completedPosts = completedPosts.filter((post) => post.id !== id);
 };
 
 const completePost = (id) => {
@@ -43,7 +41,7 @@ router.post('/', (req, res) => {
     res.json(allPosts);
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id/delete', (req, res) => {
     const id = parseInt(req.params.id);
     deletePost(id);
 });
