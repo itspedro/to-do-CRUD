@@ -44,9 +44,8 @@ const createPost = async(title, body) => {
 
 const showPost = async() => {
     try {
-        const index = allPosts.findIndex((post) => post.id === id);
-        await pool.query("UPDATE todo SET completed = true WHERE id_todo = $1;", [id]);
-        if (index === true) {
+        const index = allPosts.findIndex((post) => post.completed === true);
+        if (index !== false) {
             completedPosts.push(allPosts[index]);
             allPosts.splice(index, 1);
         } else {
