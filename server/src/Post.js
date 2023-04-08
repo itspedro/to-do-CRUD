@@ -1,17 +1,11 @@
 class Post {
 
-    static counter = 0;
-
-    constructor (titulo, corpo, completed = false,) {
+    constructor (titulo, corpo, id,completed = false,) {
         this.titulo = titulo;
         this.corpo= corpo;
-        this.id = this.holdId();
+        this.id = id;
         this.completed = completed;
         this.showPost = this.showPost();
-    }
-
-    holdId() {
-        return ++Post.counter;
     }
 
     toggleCompleted() {
