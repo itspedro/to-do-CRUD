@@ -15,7 +15,7 @@ const togglePopup = () => {
   document.querySelector(".conteudoInput").value = "";
 };
 
-const apiLink = 'http://localhost:4000/api/posts';
+const apiLink = 'https://to-do.itspdro.repl.co/api/posts';
 
 const createPost = () => {
   const title = document.querySelector(".tituloInput").value;
